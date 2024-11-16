@@ -1,0 +1,264 @@
+:root {
+  --primary-color: #0984e3;
+  --text-color: #e2e2e4;
+  --bg-primary: #1a1a1d;
+  --bg-secondary: #1f1f23;
+  --accent-color: #0984e3;
+  --card-bg: #2a2a2d;
+}
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-color);
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+}
+
+/* Navigation */
+.navbar {
+  background: var(--bg-secondary);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: var(--accent-color);
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  margin-left: 2rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--accent-color);
+}
+
+/* Recipe Hero Section */
+.recipe-hero {
+  background: var(--bg-secondary);
+  padding: 4rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.recipe-category {
+  color: var(--accent-color);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.recipe-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.author img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.recipe-stats {
+  display: flex;
+  gap: 2rem;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Quick Info Cards */
+.quick-info {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: -2rem auto 2rem;
+  padding: 0 2rem;
+}
+
+.info-card {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.info-card i {
+  font-size: 1.5rem;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+/* Recipe Content */
+.recipe-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.recipe-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.ingredients-section {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 15px;
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+}
+
+.servings-adjuster {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.servings-adjuster button {
+  background: var(--accent-color);
+  border: none;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.ingredients-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Instructions */
+.instruction-step {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.step-number {
+  background: var(--accent-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* Related Recipes */
+.related-recipes {
+  margin-top: 4rem;
+}
+
+.recipe-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Comments Section */
+.comments-section {
+  margin-top: 4rem;
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .recipe-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .quick-info {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .recipe-content {
+    grid-template-columns: 1fr;
+  }
+
+  .ingredients-section {
+    position: static;
+  }
+}
+
+@media (max-width: 480px) {
+  .quick-info {
+    grid-template-columns: 1fr;
+  }
+
+  .recipe-stats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+}

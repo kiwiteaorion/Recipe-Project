@@ -1,0 +1,124 @@
+:root {
+  --primary-color: #0984e3;
+  --text-color: #e2e2e4;
+  --bg-primary: #1a1a1d;
+  --bg-secondary: #1f1f23;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-color);
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+.recipe-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.recipe-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.recipe-title-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.recipe-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.recipe-meta {
+  display: flex;
+  gap: 1.5rem;
+  color: var(--text-color);
+}
+
+.recipe-meta span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.recipe-image {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.recipe-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.recipe-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+}
+
+.ingredients-section {
+  background: var(--bg-secondary);
+  padding: 2rem;
+  border-radius: 15px;
+}
+
+.ingredients-list {
+  list-style: none;
+  padding: 0;
+}
+
+.ingredients-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.instructions-list {
+  padding-left: 1.5rem;
+}
+
+.instructions-list li {
+  margin-bottom: 1.5rem;
+}
+
+.nutrition-facts {
+  margin-top: 2rem;
+  padding: 2rem;
+  background: var(--bg-secondary);
+  border-radius: 15px;
+}
+
+.nutrition-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.nutrition-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+  .recipe-header {
+    grid-template-columns: 1fr;
+  }
+
+  .recipe-content {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Culinary Explorer</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Hero Section -->
+    <div class="hero">
+      <div class="hero-content">
+        <h1>Discover Your Next Favorite Recipe</h1>
+        <p>Explore thousands of recipes from around the world</p>
+        <div class="search-container">
+          <input type="text" id="searchInput" placeholder="Search recipes..." />
+          <button id="searchButton">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+      <div class="wave-container">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path
+            fill="#ffffff"
+            fill-opacity="1"
+            d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+          />
+        </svg>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Filters Section -->
+      <div class="filters-section">
+        <div class="filter-container">
+          <select id="cuisineFilter" class="filter-select">
+            <option value="">All Cuisines</option>
+            <option value="italian">Italian</option>
+            <option value="mexican">Mexican</option>
+            <option value="indian">Indian</option>
+            <option value="chinese">Chinese</option>
+            <option value="japanese">Japanese</option>
+            <option value="thai">Thai</option>
+          </select>
+          <select id="dietFilter" class="filter-select">
+            <option value="">All Diets</option>
+            <option value="vegetarian">Vegetarian</option>
+            <option value="vegan">Vegan</option>
+            <option value="gluten-free">Gluten Free</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Recipe Grid -->
+      <div class="loading" id="loading">
+        <div class="spinner"></div>
+      </div>
+
+      <div class="recipes-container">
+        <div class="recipes-grid" id="recipesContainer">
+          <!-- Recipes will be populated here -->
+        </div>
+      </div>
+
+      <!-- Recipe Modal -->
+      <div id="recipeModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div id="recipeDetails"></div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Features Section -->
+    <section class="features">
+      <div class="feature-card">
+        <i class="fas fa-utensils"></i>
+        <h3>Diverse Recipes</h3>
+        <p>Explore cuisines from around the world</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-clock"></i>
+        <h3>Quick & Easy</h3>
+        <p>Find recipes that fit your schedule</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-heart"></i>
+        <h3>Save Favorites</h3>
+        <p>Keep track of recipes you love</p>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>About Culinary Explorer</h2>
+          <div class="accent-line"></div>
+        </div>
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              Welcome to Culinary Explorer, where passion meets plate! Our
+              mission is to make cooking an adventure for everyone, from
+              beginners to seasoned chefs.
+            </p>
+            <p>
+              With our extensive collection of recipes and intuitive search
+              features, you'll discover new flavors and techniques that will
+              transform your cooking journey.
+            </p>
+            <div class="stats">
+              <div class="stat-item">
+                <span class="stat-number">1000+</span>
+                <span class="stat-label">Recipes</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">Cuisines</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">24/7</span>
+                <span class="stat-label">Support</span>
+              </div>
+            </div>
+          </div>
+          <div class="about-image">
+            <img
+              src="assets/images/about-cooking.jpg"
+              alt="Cooking Illustration"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Get in Touch</h2>
+          <div class="accent-line"></div>
+        </div>
+        <div class="contact-content">
+          <div class="contact-info">
+            <div class="info-card">
+              <i class="fas fa-envelope"></i>
+              <h3>Email</h3>
+              <p>hello@culinaryexplorer.com</p>
+            </div>
+            <div class="info-card">
+              <i class="fab fa-github"></i>
+              <h3>GitHub</h3>
+              <p>github.com/yourusername</p>
+            </div>
+            <div class="info-card">
+              <i class="fab fa-linkedin"></i>
+              <h3>LinkedIn</h3>
+              <p>linkedin.com/in/yourusername</p>
+            </div>
+          </div>
+          <form id="contactForm" class="contact-form">
+            <div class="form-group">
+              <input type="text" id="name" required placeholder="Your Name" />
+            </div>
+            <div class="form-group">
+              <input
+                type="email"
+                id="email"
+                required
+                placeholder="Your Email"
+              />
+            </div>
+            <div class="form-group">
+              <textarea
+                id="message"
+                required
+                placeholder="Your Message"
+              ></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Support Section -->
+    <section class="support-section">
+      <div class="container">
+        <div class="support-content">
+          <h2>Support This Project</h2>
+          <p>If you find this resource helpful, consider buying me a coffee!</p>
+          <a
+            href="https://www.buymeacoffee.com/YourUsername"
+            target="_blank"
+            class="coffee-btn"
+          >
+            <i class="fas fa-coffee"></i> Buy me a coffee
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Culinary Explorer</h3>
+          <p>Discover the joy of cooking, one recipe at a time.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-pinterest"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Culinary Explorer. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
