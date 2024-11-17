@@ -9,6 +9,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
+    <script src="assets/js/script.js"></script>
   </head>
   <body>
     <!-- Hero Section -->
@@ -131,10 +132,39 @@
             </div>
           </div>
           <div class="about-image">
-            <img
-              src="assets/images/about-cooking.jpg"
-              alt="Cooking Illustration"
-            />
+            <div class="slideshow-container">
+              <div class="slide fade">
+                <img
+                  src="assets/pictures/cooking-picture.webp"
+                  alt="Cooking Illustration 1"
+                />
+              </div>
+
+              <div class="slide fade">
+                <img
+                  src="assets/pictures/cooking-picture2.webp"
+                  alt="Cooking Illustration 2"
+                />
+              </div>
+
+              <div class="slide fade">
+                <img
+                  src="assets/pictures/cooking-picture3.webp"
+                  alt="Cooking Illustration 3"
+                />
+              </div>
+
+              <!-- Navigation arrows -->
+              <a class="prev" onclick="changeSlide(-1)">❮</a>
+              <a class="next" onclick="changeSlide(1)">❯</a>
+
+              <!-- Dots/circles -->
+              <div class="dots">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
